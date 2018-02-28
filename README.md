@@ -1,9 +1,10 @@
-#Magento Maintenance Script por FactoriaDigital
+
+# Magento Maintenance Script por FactoriaDigital
 ![](https://img.shields.io/github/stars/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/forks/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/tag/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/release/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/issues/factoriadigital/magento-maintenance-script.svg) 
 
-##Método de uso
+## Método de uso
 
-####Múltiples Magento
+#### Múltiples Magento
 Si deseas utilizar el script para múltiples Magento, debes editar la variable
 ```javascript
 ROOT_DIR = "/home/"
@@ -19,7 +20,7 @@ Por ejemplo, podríamos tener lo siguiente:
 
 Por los que el script iría en `/home/magento_maintenance.sh` para que detectara cada directorio y realizara automáticamente la limpieza en ellos.
 
-####Un único Magento
+#### Un único Magento
 
 Deberás añadir la ruta absoluta hacia el root de tu directorio Magento en la siguiente variable:
 ```bash
@@ -62,7 +63,7 @@ if [ -f "$ROOT_DIRapp/Mage.php" ]; then
     clean "$ROOT_DIR"
 fi
 ```
-####Ejecutar el script
+#### Ejecutar el script
 
 Otorgamos permisos de ejecución al script accediendo desde el servidor:
 ```bash
@@ -74,12 +75,10 @@ Y lanzamos el script
 ```
 El script comenazará a escanear los directorios y a proceder con su limpieza.
 
-####Opciones adicionales
+#### Opciones adicionales
 ```bash 
 VERBOSE=true
 LOG_FILES_EXPIRATION=30
 SESSION_FILES_EXPIRATION=7
 CACHE_IMAGES_EXPIRATION=180
 ```
-
-
