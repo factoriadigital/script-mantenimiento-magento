@@ -8,6 +8,8 @@ A su vez, realiza una limpieza de los directorios var/report, var/log y var/sess
 
 Adicionalmente, se procede a limpiar las imágenes almacenadas en caché, por si realmente no quisiéramos flushear todo el catálogo perdiendo así tiempo de regeneración de las mismas. El tiempo se define en la variable `CACHE_IMAGES_EXPIRATION`, que por defecto es de 180 días.
 
+También procede a la limpieza forzada de las tablas de logs de los visitantes. Los días están definidos en la variable `LOG_VISITOR_EXPIRATION_DAYS`, la cual por defecto es de 7 días.
+
 ## Método de uso
 
 #### Múltiples Magento
