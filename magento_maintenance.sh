@@ -8,6 +8,7 @@ ROOT_DIR="/home/" # Absolute path to this script
 LOG_FILES_EXPIRATION=30
 SESSION_FILES_EXPIRATION=7
 CACHE_IMAGES_EXPIRATION=180
+LOG_VISITOR_EXPIRATION_DAYS=7
 
 # Function declarations
 function usage() 
@@ -52,12 +53,20 @@ function clean_cache_images()
     show_log "Clean cache images process finished."
 }
 
+function clean_visitor_logs()
+{
+    show_log "Cleaning visitor logs..."
+    php shell/log.php clean --days $LOG_VISITOR_EXPIRATION_DAYS
+    show_log "Cleaned visitor logs successfully."
+}
+
 function clean()
 {
     show_log "-----------------------------------------------------------------------"
     show_log "Magento installation found on: $1"    
     backup_logs $1
     clean_folders $1
+    clean_visitor_logs $1
     clean_cache_images $1 # Maybe the customer does not want to do this process
     show_log "-----------------------------------------------------------------------"
 }
