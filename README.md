@@ -2,6 +2,12 @@
 # Magento Maintenance Script por FactoriaDigital
 ![](https://img.shields.io/github/stars/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/forks/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/tag/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/release/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/issues/factoriadigital/magento-maintenance-script.svg) 
 
+Este script realiza un backup de los archivos encontrados en la carpeta var/log, creando un archivo comprimido del mismo. 
+
+A su vez, realiza una limpieza de los directorios var/report, var/log y var/session eliminando los archivos con fecha superior al valor `LOG_FILES_EXPIRATION` para var/log y var/report, el cual por defecto es de 30 días; y dependiendo del valor `SESSION_FILES_EXPIRATION` para var/session, que por defecto es de 7 días.
+
+Adicionalmente, se procede a limpiar las imágenes almacenadas en caché, por si realmente no quisiéramos flushear todo el catálogo perdiendo así tiempo de regeneración de las mismas. El tiempo se define en la variable `CACHE_IMAGES_EXPIRATION`, que por defecto es de 180 días.
+
 ## Método de uso
 
 #### Múltiples Magento
