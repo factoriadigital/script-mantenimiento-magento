@@ -5,11 +5,11 @@ VERBOSE=true
 
 # Vars
 ROOT_DIR="/home/" # Absolute path to this script
-LOG_FILES_EXPIRATION=30
-SESSION_FILES_EXPIRATION=7
-CACHE_IMAGES_EXPIRATION=180
-LOG_VISITOR_EXPIRATION_DAYS=7
-ERROR_LOG_MONTH_DAY=25
+LOG_FILES_EXPIRATION=30 # In days
+SESSION_FILES_EXPIRATION=7 # In days
+CACHE_IMAGES_EXPIRATION=180 # In days
+LOG_VISITOR_EXPIRATION_DAYS=7 # In days
+ERROR_LOG_MONTH_DAY=25 #Month day when error_log file will be removed
 
 # Function declarations
 function usage() 
@@ -144,7 +144,7 @@ done
 # If Magento is found
 #if [ -f "$ROOT_DIRapp/Mage.php" ]; then    
 #    clean "$ROOT_DIR"
-#lse
+#else
 #   for subdir in $ROOT_DIRpublic_html/*;
 #   do
 #       if [ -f "$subdir/app/Mage.php" ]; then
