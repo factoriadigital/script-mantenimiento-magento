@@ -9,6 +9,7 @@ LOG_FILES_EXPIRATION=30
 SESSION_FILES_EXPIRATION=7
 CACHE_IMAGES_EXPIRATION=180
 LOG_VISITOR_EXPIRATION_DAYS=7
+ERROR_LOG_MONTH_DAY=25
 
 # Function declarations
 function usage() 
@@ -88,6 +89,21 @@ function clean_visitor_logs()
     show_log "Cleaned visitor logs successfully."
 }
 
+function clean_error_log_file()
+{
+    show_log "Cleaning error_log file..."
+
+    monthDay=`date +%d`
+    if [[ $monthDay -ge $ERROR_LOG_MONTH_DAY && -f "$1/error_log" ]]; then
+        rm -f $1/error_log
+        show_log "Cleaned"
+    else
+        show_log "Skipping clean error log file process: Not $ERROR_LOG_MONTH_DAY month day"
+    fi
+
+    show_log "Clean error_log file process finished."
+}
+
 function clean()
 {
     show_log "-----------------------------------------------------------------------"
@@ -96,6 +112,7 @@ function clean()
     clean_folders $1
     clean_visitor_logs $1
     clean_cache_images $1 # Maybe the customer does not want to do this process
+    clean_error_log_file $1
     show_log "-----------------------------------------------------------------------"
 }
 
