@@ -129,11 +129,13 @@ do
     # If Magento is found
     if [ -f "$ROOT_DIR$dir/public_html/app/Mage.php" ]; then
         clean "$ROOT_DIR$dir/public_html"
+        chown -R $dir:$dir $ROOT_DIR$dir/public_html/var/log
     else
         for subdir in $ROOT_DIR$dir/public_html/*;
         do
             if [ -f "$subdir/app/Mage.php" ]; then
                 clean "$subdir"
+                chown -R $dir:$dir $subdir/var/log
             fi
         done
     fi
@@ -144,11 +146,13 @@ done
 # If Magento is found
 #if [ -f "$ROOT_DIRapp/Mage.php" ]; then    
 #    clean "$ROOT_DIR"
+#    chown -R $dir:$dir $ROOT_DIRvar/log
 #else
 #   for subdir in $ROOT_DIRpublic_html/*;
 #   do
 #       if [ -f "$subdir/app/Mage.php" ]; then
 #           clean "$subdir"
+#           chown -R $dir:$dir $subdir/var/log
 #       fi
 #   done
 #fi
