@@ -10,6 +10,7 @@ SESSION_FILES_EXPIRATION=7 # In days
 CACHE_IMAGES_EXPIRATION=180 # In days
 LOG_VISITOR_EXPIRATION_DAYS=7 # In days
 ERROR_LOG_MONTH_DAY=25 #Month day when error_log file will be removed
+MAXIMUM_LOG_FILE_SIZE=50 # In MB
 
 # Function declarations
 function usage() 
@@ -29,7 +30,7 @@ function backup_logs()
         name=$(date '+%d-%m-%Y')
         fullname="logs_$name.tar.gz"
         cd $1/var/log
-        tar -zcf $fullname .
+        tar --exclude='*.tar.gz' -zcf $fullname $(find . -size -"$MAXIMUM_LOG_FILE_SIZE"M)
         show_log "$fullname successfully created on $1/var/log"        
     else
         show_log "Skipping backup logs process: $1/var/log/ folder does not exist"
