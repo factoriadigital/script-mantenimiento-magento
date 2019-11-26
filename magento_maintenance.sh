@@ -95,7 +95,7 @@ function clean_error_log_file()
     show_log "Cleaning error_log file..."
 
     monthDay=`date +%d`
-    if [[ $monthDay -ge $ERROR_LOG_MONTH_DAY && -f "$1/error_log" ]]; then
+    if [[ $monthDay -eq $ERROR_LOG_MONTH_DAY && -f "$1/error_log" ]]; then
         rm -f $1/error_log
         show_log "Cleaned"
     else
