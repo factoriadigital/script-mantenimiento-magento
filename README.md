@@ -17,6 +17,10 @@ Se establece un tamaño máximo del archivo para los archivos que se van a compr
 
 Si tienes dudas puedes plantearlas en este enlace: https://www.factoriadigital.com/mgnt/threads/script-gratuito-de-mantenimiento-para-magento.9084/
 
+Si prefieres que lo hagamos por ti contactanos a [magento@factoriadigital.com](mailto:magento@factoriadigital.com) para que estudiemos tu caso.
+
+Si eres cliente del hosting compartido para magento de [Factoria Digital](https://www.factoriadigital.com/) no hace falta que hagas nada, se ejecuta automáticamente, y si tienes un servidor vps magento con nosotros la instalación y configuración a medida de este script es gratuita.
+
 ## Método de uso
 
 #### Múltiples Magento
