@@ -106,7 +106,7 @@ Quedando la línea completa así:
 0 2 * * 6 /bin/sh /home/magento_maintenance.sh
 ```
 
-**Es importante tener en cuenta que la ruta de instalación del cron ha de ser la misma que la de la variable ROOT_DIR del script, sino no se ejecutará correctamente.**
+**Es importante tener en cuenta que la ruta de instalación del cron ha de ser la misma que la de la variable ROOT_DIR del script, siendo por tanto ROOT_DIR/nombre del script.sh, sino no se ejecutará correctamente.**
 
 Se pueden ver de manera visual en qué momentos se ejecutarán las tareas cron en esta página web: https://crontab.guru/#0_2_*_*_6
 
