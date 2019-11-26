@@ -124,6 +124,8 @@ function show_log()
     fi    
 }
 
+cd $ROOT_DIR;
+
 # For multiple Magento installations
 for dir in *;
 do
