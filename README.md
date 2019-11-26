@@ -15,6 +15,8 @@ El día del mes por defecto es el 25, se indica en la variable `ERROR_LOG_MONTH_
 
 Se establece un tamaño máximo del archivo para los archivos que se van a comprimir mediante la variable `MAXIMUM_LOG_FILE_SIZE`. El valor tiene que ser en MB y el valor por defecto es 50MB. Esto permite que se genere un archivo comprimido con los archivos de log con ese tamaño o inferior, para evitar tener archivos comprimidos excesivamente grandes. Dependiendo de la periodicidad con la que se ejecute el script, el tamaño debería incrementarse o reducirse, ya que no deberíamos tener archivos de log de mas de 50MB generados en un día, pero puede que sí pesen 50MB pasada una semana.
 
+Si tienes dudas puedes plantearlas en este enlace: https://www.factoriadigital.com/mgnt/threads/script-gratuito-de-mantenimiento-para-magento.9084/
+
 ## Método de uso
 
 #### Múltiples Magento
