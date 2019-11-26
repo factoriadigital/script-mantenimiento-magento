@@ -87,6 +87,7 @@ El script comenazará a escanear los directorios y a proceder con su limpieza.
 
 Podemos ejecutar el script de forma periodica para que realice las tareas de mantenimiento necesarias mediante una tarea cron. 
 Para ello, desde la cuenta de cPanel, accedemos a "Tareas cron" o "Cron Jobs", donde encontraremos una serie de opciones para programar la tarea.
+
 Dependiendo de donde esté el script subido, la ruta será una u otra, para este ejemplo, contamos que el script está subido a /home, para que detecte todos los Magento que podamos tener instalados y así realice la limpieza de todos a la vez, por tanto, la línea a introducir para el comando de la tarea cron será:
 
 ```bash
@@ -104,6 +105,8 @@ Quedando la línea completa así:
 ```bash
 0 2 * * 6 /bin/sh /home/magento_maintenance.sh
 ```
+
+**Es importante tener en cuenta que la ruta de instalación del cron ha de ser la misma que la de la variable ROOT_DIR del script, sino no se ejecutará correctamente.**
 
 Se pueden ver de manera visual en qué momentos se ejecutarán las tareas cron en esta página web: https://crontab.guru/#0_2_*_*_6
 
