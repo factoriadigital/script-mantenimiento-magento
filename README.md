@@ -10,6 +10,11 @@ Adicionalmente, se procede a limpiar las imágenes almacenadas en caché, por si
 
 También procede a la limpieza forzada de las tablas de logs de los visitantes. Los días están definidos en la variable `LOG_VISITOR_EXPIRATION_DAYS`, la cual por defecto es de 7 días.
 
+Se establece un día del mes (o superior al indicado) para que se proceda al borrado del archivo error_log, el cual en ocasiones puede llenarse en exceso. Es importante revisar estos errores, puesto que los que aparecen en este archivo, son errores relevantes, por lo que no deberíamos simplemente borrar el archivo e ignorarlos. 
+El día del mes por defecto es el 25, se indica en la variable `ERROR_LOG_MONTH_DAY`. Hay que tener en cuenta que no todos los meses tienen 30 ni 31 días, y en el caso de Febrero el caso es mas concreto, por lo que hay que proceder con cuidado al configurar este valor.
+
+Se establece un tamaño máximo del archivo para los archivos que se van a comprimir mediante la variable `MAXIMUM_LOG_FILE_SIZE`. El valor tiene que ser en MB y el valor por defecto es 50MB. Esto permite que se genere un archivo comprimido con los archivos de log con ese tamaño o inferior, para evitar tener archivos comprimidos excesivamente grandes. Dependiendo de la periodicidad con la que se ejecute el script, el tamaño debería incrementarse o reducirse, ya que no deberíamos tener archivos de log de mas de 50MB generados en un día, pero puede que sí pesen 50MB pasada una semana.
+
 ## Método de uso
 
 #### Múltiples Magento
@@ -118,4 +123,5 @@ SESSION_FILES_EXPIRATION=7
 CACHE_IMAGES_EXPIRATION=180
 LOG_VISITOR_EXPIRATION_DAYS=7
 ERROR_LOG_MONTH_DAY=25
+MAXIMUM_LOG_FILE_SIZE=50
 ```
