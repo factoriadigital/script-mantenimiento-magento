@@ -1,5 +1,5 @@
 
-# Magento Maintenance Script por FactoriaDigital
+# Script de Mantenimiento para Magento por FactoriaDigital
 ![](https://img.shields.io/github/stars/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/forks/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/tag/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/release/factoriadigital/magento-maintenance-script.svg) ![](https://img.shields.io/github/issues/factoriadigital/magento-maintenance-script.svg) 
 
 Este script realiza un backup de los archivos encontrados en la carpeta var/log, creando un archivo comprimido del mismo. 
